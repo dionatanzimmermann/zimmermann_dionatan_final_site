@@ -1,5 +1,5 @@
 {
-  "name": "zimmermann_dionatan_ui_garden",
+  "name": "zimmermann_dionatan_ui_garden_build_check",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -85,7 +85,7 @@
       "prettier --write"
     ],
     "**/*.{js,jsx,ts,tsx}": [
-      "npm test -- --findRelatedTests --passWithNoTests"
+      "npm test -- --findRelatedTests --passWithNoTests --runInBand --silen"
     ]
   }
 }
