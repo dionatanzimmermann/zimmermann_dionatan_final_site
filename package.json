@@ -85,7 +85,7 @@
       "prettier --write"
     ],
     "**/*.{js,jsx,ts,tsx}": [
-      "npm test -- --findRelatedTests --passWithNoTests --runInBand --silen"
+      "npm test -- --findRelatedTests --passWithNoTests --runInBand --silent"
     ]
   }
 }
