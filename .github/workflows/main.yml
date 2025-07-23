@@ -1,29 +1,38 @@
-# This is a basic workflow to help you get started with Actions
-name: front-linter
-# Controls when the workflow will run
+name: CI Pipeline
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
-# Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches: [ main ]
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  quality-checks:
     runs-on: ubuntu-latest
-# Steps represent a sequence of tasks that will be executed as part of the job
+    name: Quality Checks
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
-      - name: install
-        run: yarn install
-      - name: ESLint
-        run: yarn run fix .
-      - name: Prettier
-        run: yarn prettier --write .
+          node-version: '20.x'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run ESLint
+        run: npm run lint
+        
+      - name: Run Prettier
+        run: npm run format -- --check
+      
+      - name: Run Tests
+        run: npm test -- --watchAll=false --ci
+      
+      - name: Build project
+        run: npm run build
+        
+      - name: Docker build
+        run: docker build -t zimmermann_dionatan_coding_assignment13 .
