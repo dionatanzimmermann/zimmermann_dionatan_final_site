@@ -19,12 +19,7 @@ const StyledTable = styled.table<{ disabled?: boolean }>`
   }
 `;
 
-export const Table: React.FC<TableProps> = ({
-  headers = [],
-  data = [],
-  footer = '',
-  disabled = false
-}) => {
+export const Table: React.FC<TableProps> = ({ headers = [], data = [], footer = '', disabled = false }) => {
   const hasContent = headers.length > 0 || data.length > 0 || footer !== '';
 
   if (!hasContent) return null;

@@ -1,5 +1,5 @@
-import { StoryFn, Meta } from "@storybook/react-webpack5";
-import TableCell  from './TableCell';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
+import TableCell from './TableCell';
 import { TableCellProps } from './TableCell.types';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     disabled: { control: 'boolean' },
     as: {
       control: 'select',
-      options: ['td', 'th']
+      options: ['td', 'th'],
     },
   },
 } as Meta<typeof TableCell>;

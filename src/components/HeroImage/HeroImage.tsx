@@ -58,19 +58,10 @@ export const StyledTextWrapper = styled.div`
   }
 `;
 
-const HeroImage: React.FC<HeroImageProps> = ({
-  imageUrl,
-  headline,
-  subheadline,
-  disabled = false,
-}) => {
+const HeroImage: React.FC<HeroImageProps> = ({ imageUrl, headline, subheadline, disabled = false }) => {
   return (
-    <StyledHeroImageContainer disabled={disabled} data-testid='herocontainer'>
-      <StyledImage
-        src={imageUrl}
-        alt="Hero"
-        disabled={disabled}
-      />
+    <StyledHeroImageContainer disabled={disabled} data-testid="herocontainer">
+      <StyledImage src={imageUrl} alt="Hero" disabled={disabled} />
       {!disabled && (
         <StyledOverlay>
           <StyledTextWrapper>

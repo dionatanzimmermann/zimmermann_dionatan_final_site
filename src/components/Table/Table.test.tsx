@@ -6,7 +6,10 @@ describe('Table', () => {
     render(
       <Table
         headers={['Name', 'Age']}
-        data={[['Alice', '28'], ['Bob', '32']]}
+        data={[
+          ['Alice', '28'],
+          ['Bob', '32'],
+        ]}
       />
     );
     expect(screen.getByText('Name')).toBeInTheDocument();
@@ -16,25 +19,13 @@ describe('Table', () => {
   });
 
   test('renders footer', () => {
-    render(
-      <Table
-        headers={['Name']}
-        data={[['Alice']]}
-        footer="Summary"
-      />
-    );
+    render(<Table headers={['Name']} data={[['Alice']]} footer="Summary" />);
     expect(screen.getByText('Summary')).toBeInTheDocument();
     expect(screen.getByText('Summary')).toBeVisible();
   });
 
   test('applies disabled styles', () => {
-    render(
-      <Table
-        headers={['Name']}
-        data={[['Alice']]}
-        disabled
-      />
-    );
+    render(<Table headers={['Name']} data={[['Alice']]} disabled />);
     expect(screen.getByText('Alice').parentElement).toHaveStyle('opacity: 0.6');
     expect(screen.getByText('Alice').parentElement).toHaveStyle('background-color: rgb(204, 204, 204)');
     expect(screen.getByText('Alice')).toBeVisible();

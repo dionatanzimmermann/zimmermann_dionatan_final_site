@@ -6,17 +6,10 @@ const StyledTableCell = styled.td<TableCellProps>`
   border-bottom: 1px solid #ddd;
   color: ${({ disabled }) => (disabled ? '#888' : '#555')};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'default')};
-  background: ${({ disabled, as }) =>
-    as === 'th'
-      ? disabled ? '#ccc' : '#f0f0f0'
-      : 'transparent'};
+  background: ${({ disabled, as }) => (as === 'th' ? (disabled ? '#ccc' : '#f0f0f0') : 'transparent')};
 `;
 
-const TableCell: React.FC<TableCellProps> = ({
-  children,
-  disabled = false,
-  as = 'td'
-}) => {
+const TableCell: React.FC<TableCellProps> = ({ children, disabled = false, as = 'td' }) => {
   return (
     <StyledTableCell as={as} disabled={disabled}>
       {children}

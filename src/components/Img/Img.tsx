@@ -18,24 +18,10 @@ export const StyledImg = styled.img<{ disabled?: boolean }>`
   }
 `;
 
-const Img: React.FC<ImgProps> = ({
-  src,
-  alt = 'Image',
-  width = '100%',
-  height = 'auto',
-  disabled = false,
-}) => {
+const Img: React.FC<ImgProps> = ({ src, alt = 'Image', width = '100%', height = 'auto', disabled = false }) => {
   if (!src) return null;
 
-  return (
-    <StyledImg
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      disabled={disabled}
-    />
-  );
+  return <StyledImg src={src} alt={alt} width={width} height={height} disabled={disabled} />;
 };
 
 export default Img;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StoryFn, Meta } from "@storybook/react-webpack5";
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import RadioButton from './RadioButton';
 
 export default {
@@ -15,13 +15,7 @@ const options = [
 
 const Template: StoryFn<typeof RadioButton> = (args) => {
   const [value, setValue] = useState(args.value);
-  return (
-    <RadioButton
-      {...args}
-      value={value}
-      onChange={setValue}
-    />
-  );
+  return <RadioButton {...args} value={value} onChange={setValue} />;
 };
 
 export const Default = Template.bind({});

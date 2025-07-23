@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react-webpack5";
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import TableRow from './TableRow';
 import { TableCell } from '../TableCell';
 import { TableRowProps } from './TableRow.types';

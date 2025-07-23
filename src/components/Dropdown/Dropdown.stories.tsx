@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import { StoryFn, Meta } from "@storybook/react-webpack5";
+import { useState } from 'react';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import Dropdown from './Dropdown';
 
 export default {
@@ -13,13 +13,7 @@ export default {
 
 const Template: StoryFn<typeof Dropdown> = (args) => {
   const [value, setValue] = useState(args.value);
-  return (
-    <Dropdown
-      {...args}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-    />
-  );
+  return <Dropdown {...args} value={value} onChange={(e) => setValue(e.target.value)} />;
 };
 
 export const Default = Template.bind({});

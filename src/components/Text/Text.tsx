@@ -10,17 +10,11 @@ export const StyledText = styled.span<{ disabled?: boolean; color?: string; font
   transition: color 0.3s ease;
 
   @media (max-width: 600px) {
-    font-size: ${({ fontSize }) =>
-      fontSize ? `calc(${fontSize} * 0.9)` : '0.9rem'};
+    font-size: ${({ fontSize }) => (fontSize ? `calc(${fontSize} * 0.9)` : '0.9rem')};
   }
 `;
 
-const Text: React.FC<TextProps> = ({
-  children,
-  disabled = false,
-  color,
-  fontSize,
-}) => {
+const Text: React.FC<TextProps> = ({ children, disabled = false, color, fontSize }) => {
   return (
     <StyledText disabled={disabled} color={color} fontSize={fontSize}>
       {children}

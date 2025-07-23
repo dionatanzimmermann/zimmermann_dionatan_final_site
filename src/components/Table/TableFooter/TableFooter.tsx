@@ -11,11 +11,7 @@ const StyledTableFooter = styled.td<TableFooterProps>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'default')};
 `;
 
-const TableFooter: React.FC<TableFooterProps> = ({
-  children,
-  disabled = false,
-  colSpan
-}) => {
+const TableFooter: React.FC<TableFooterProps> = ({ children, disabled = false, colSpan }) => {
   return (
     <StyledTableFooter disabled={disabled} colSpan={colSpan}>
       {children}

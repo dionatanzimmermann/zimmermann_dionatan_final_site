@@ -9,15 +9,13 @@ export const StyledCardContainer = styled.div<{ disabled?: boolean }>`
   border-radius: 8px;
   overflow: hidden;
   background-color: ${({ disabled }) => (disabled ? '#f5f5f5' : '#fff')};
-  box-shadow: ${({ disabled }) =>
-    disabled ? 'none' : '0 2px 6px rgba(0,0,0,0.1)'};
+  box-shadow: ${({ disabled }) => (disabled ? 'none' : '0 2px 6px rgba(0,0,0,0.1)')};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   filter: ${({ disabled }) => (disabled ? 'grayscale(100%) opacity(0.6)' : 'none')};
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: ${({ disabled }) =>
-      disabled ? 'none' : '0 4px 12px rgba(0,0,0,0.15)'};
+    box-shadow: ${({ disabled }) => (disabled ? 'none' : '0 4px 12px rgba(0,0,0,0.15)')};
   }
 
   @media (max-width: 600px) {
@@ -64,28 +62,13 @@ export const StyledCardDescription = styled.p<{ disabled?: boolean }>`
   }
 `;
 
-const Card: React.FC<CardProps> = ({
-  imageUrl,
-  title,
-  description,
-  disabled = false,
-}) => {
+const Card: React.FC<CardProps> = ({ imageUrl, title, description, disabled = false }) => {
   return (
-    <StyledCardContainer disabled={disabled} data-testid='card'>
-      {imageUrl && (
-        <StyledCardImage
-          src={imageUrl}
-          alt={title || 'Card Image'}
-          disabled={disabled}
-        />
-      )}
+    <StyledCardContainer disabled={disabled} data-testid="card">
+      {imageUrl && <StyledCardImage src={imageUrl} alt={title || 'Card Image'} disabled={disabled} />}
       <StyledCardContent>
-        <StyledCardTitle disabled={disabled}>
-          {title || ' '}
-        </StyledCardTitle>
-        <StyledCardDescription disabled={disabled}>
-          {description || ' '}
-        </StyledCardDescription>
+        <StyledCardTitle disabled={disabled}>{title || ' '}</StyledCardTitle>
+        <StyledCardDescription disabled={disabled}>{description || ' '}</StyledCardDescription>
       </StyledCardContent>
     </StyledCardContainer>
   );

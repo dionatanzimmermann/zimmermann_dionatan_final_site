@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react-webpack5";
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import Img from './Img';
 import defaultImg from './img.png';
 

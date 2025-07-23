@@ -9,7 +9,9 @@ export const StyledLabel = styled.label<{ disabled?: boolean }>`
   color: ${({ disabled }) => (disabled ? '#888' : '#333')};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'default')};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
-  transition: color 0.3s, opacity 0.3s;
+  transition:
+    color 0.3s,
+    opacity 0.3s;
   background-color: ${({ disabled }) => (disabled ? 'rgb(245, 245, 245)' : 'white')};
 
   @media (max-width: 600px) {
@@ -17,11 +19,7 @@ export const StyledLabel = styled.label<{ disabled?: boolean }>`
   }
 `;
 
-const Label: React.FC<LabelProps> = ({
-  htmlFor,
-  text,
-  disabled = false,
-}) => {
+const Label: React.FC<LabelProps> = ({ htmlFor, text, disabled = false }) => {
   if (!text) return null;
 
   return (

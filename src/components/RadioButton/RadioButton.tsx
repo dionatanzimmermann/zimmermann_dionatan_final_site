@@ -28,12 +28,7 @@ export const StyledRadioOption = styled.div<{ disabled?: boolean }>`
   }
 `;
 
-const RadioButton: React.FC<RadioButtonProps> = ({
-  options,
-  value,
-  onChange,
-  disabled = false,
-}) => {
+const RadioButton: React.FC<RadioButtonProps> = ({ options, value, onChange, disabled = false }) => {
   return (
     <StyledRadioGroup>
       {options.map((option) => (

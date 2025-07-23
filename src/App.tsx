@@ -22,7 +22,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <p>Edit <code>src/App.tsx</code> and save to reload.</p>
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
 
         <section>
           <h2>Button</h2>
@@ -32,16 +34,8 @@ function App() {
 
         <section>
           <h2>Dropdown</h2>
-          <Dropdown
-            value={dropdownValue}
-            onChange={(e) => setDropdownValue(e.target.value)}
-            disabled={false}
-          />
-          <Dropdown
-            value={dropdownValue}
-            onChange={(e) => setDropdownValue(e.target.value)}
-            disabled={true}
-          />
+          <Dropdown value={dropdownValue} onChange={(e) => setDropdownValue(e.target.value)} disabled={false} />
+          <Dropdown value={dropdownValue} onChange={(e) => setDropdownValue(e.target.value)} disabled={true} />
         </section>
 
         <section>

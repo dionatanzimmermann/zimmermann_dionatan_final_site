@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react-webpack5";
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import TableHeader from './TableHeader';
 import { TableHeaderProps } from './TableHeader.types';
 
