@@ -1,8 +1,8 @@
 # Start your image with a node base image
 FROM node:20-alpine AS builder
 
-# The /zimmermann_dionatan_ui_garden directory should act as the main application directory
-WORKDIR /zimmermann_dionatan_ui_garden
+# The /zimmermann_dionatan_ui_garden_build_checks directory should act as the main application directory
+WORKDIR /zimmermann_dionatan_ui_garden_build_checks
 
 # Copy the app package and package-lock.json file
 COPY package*.json ./
@@ -19,11 +19,11 @@ RUN npm install \
 # Start the stage 2 with another node base image
 FROM node:20-alpine
 
-# The /zimmermann_dionatan_ui_garden directory should act as the main application directory
-WORKDIR /zimmermann_dionatan_ui_garden
+# The /zimmermann_dionatan_ui_garden_build_checks directory should act as the main application directory
+WORKDIR /zimmermann_dionatan_ui_garden_build_checks
 
 # Copy build output to working dir
-COPY --from=builder /zimmermann_dionatan_ui_garden/build ./build
+COPY --from=builder /zimmermann_dionatan_ui_garden_build_checks/build ./build
 
 # Install serve, build the app
 RUN npm install -g serve
@@ -32,10 +32,10 @@ RUN npm install -g serve
 #RUN npm run build-storybook
 
 # Expose port
-EXPOSE 8083
+EXPOSE 8018
 
 # Start the app using serve command
-CMD [ "serve", "-s", "build", "-l", "8083"]
+CMD [ "serve", "-s", "build", "-l", "8018"]
 
 # Serve Storybook on port 8083
 #CMD ["http-server", "storybook-static", "-p", "8083", "-a", "0.0.0.0"]
