@@ -9,7 +9,7 @@ describe('Button', () => {
   });
 
   test('has greyed out background when disabled', () => {
-    render(<Button text="Disabled" disabled />);
+render(<Button text="Disabled" disabled />);
     const button = screen.getByText('Disabled');
     expect(button).toHaveStyle('background-color: #ccc');
   });

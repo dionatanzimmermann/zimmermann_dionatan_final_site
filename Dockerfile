@@ -38,4 +38,4 @@ EXPOSE 8018
 CMD [ "serve", "-s", "build", "-l", "8018"]
 
 # Serve Storybook on port 8083
-#CMD ["http-server", "storybook-static", "-p", "8083", "-a", "0.0.0.0"]
+#CMD ["http-server", "storybook-static", "-p", "8018", "-a", "0.0.0.0"]
