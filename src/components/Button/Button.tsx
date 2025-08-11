@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ButtonProps } from './Button.types';
 
+/* Exporting a constant for the component */
 export const StyledButton = styled.button<{ disabled?: boolean; backgroundColor?: string }>`
   padding: 10px 20px;
   background-color: ${({ backgroundColor, disabled }) => (disabled ? '#ccc' : backgroundColor || '#007bff')};
