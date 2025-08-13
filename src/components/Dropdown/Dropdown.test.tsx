@@ -3,14 +3,14 @@ import Dropdown from './Dropdown';
 
 describe('Dropdown', () => {
   test('renders dropdown with default option selected', () => {
-    render(<Dropdown value="option1" onChange={() => {}} />);
+    render(<Dropdown value="job" onChange={() => {}} />);
     const select = screen.getByRole('combobox');
     expect(select).toBeVisible();
-    expect(select).toHaveValue('option1');
+    expect(select).toHaveValue('job');
   });
 
   test('renders dropdown in disabled state', () => {
-    render(<Dropdown value="option1" disabled onChange={() => {}} />);
+    render(<Dropdown value="job" disabled onChange={() => {}} />);
     const select = screen.getByRole('combobox');
     expect(select).toBeVisible();
     expect(select).toBeDisabled();
