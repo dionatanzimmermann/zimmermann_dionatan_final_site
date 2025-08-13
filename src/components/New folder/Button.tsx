@@ -22,14 +22,9 @@ export const StyledButton = styled.button<{ disabled?: boolean; backgroundColor?
   }
 `;
 
-const Button: React.FC<ButtonProps> = ({ text, disabled = false, onClick, backgroundColor, type = 'button' }) => {
+const Button: React.FC<ButtonProps> = ({ text, disabled = false, onClick, backgroundColor }) => {
   return (
-    <StyledButton
-      disabled={disabled}
-      onClick={!disabled ? onClick : undefined}
-      backgroundColor={backgroundColor}
-      type={type}
-    >
+    <StyledButton disabled={disabled} onClick={!disabled ? onClick : undefined} backgroundColor={backgroundColor}>
       {text}
     </StyledButton>
   );

@@ -62,9 +62,9 @@ export const StyledCardDescription = styled.p<{ disabled?: boolean }>`
   }
 `;
 
-const Card: React.FC<CardProps> = ({ imageUrl, title, description, disabled = false, onClick }) => {
+const Card: React.FC<CardProps> = ({ imageUrl, title, description, disabled = false }) => {
   return (
-    <StyledCardContainer disabled={disabled} data-testid="card" onClick={!disabled ? onClick : undefined}>
+    <StyledCardContainer disabled={disabled} data-testid="card">
       {imageUrl && <StyledCardImage src={imageUrl} alt={title || 'Card Image'} disabled={disabled} />}
       <StyledCardContent>
         <StyledCardTitle disabled={disabled}>{title || ' '}</StyledCardTitle>

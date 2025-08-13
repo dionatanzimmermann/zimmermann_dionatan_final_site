@@ -16,13 +16,13 @@ export const StyledDropdown = styled.select<{ disabled?: boolean }>`
   }
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ value, onChange, disabled = false, name }) => {
+const Dropdown: React.FC<DropdownProps> = ({ value, onChange, disabled = false }) => {
   return (
-    <StyledDropdown disabled={disabled} value={value} onChange={onChange} name={name}>
+    <StyledDropdown disabled={disabled} value={value} onChange={onChange}>
       <option value="">-- Select an option --</option>
-      <option value="job">Job Opportunity</option>
-      <option value="networking">Networking</option>
-      <option value="collaboration">Project Collaboration</option>
+      <option value="option1">Option One</option>
+      <option value="option2">Option Two</option>
+      <option value="option3">Option Three</option>
     </StyledDropdown>
   );
 };
