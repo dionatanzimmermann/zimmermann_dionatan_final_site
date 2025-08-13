@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Card from '../components/Card/Card';
 import Text from '../components/Text/Text';
 import Layout from '../Layout';
 
