@@ -12,7 +12,7 @@ docker build -t zimmermann_dionatan_final_site .
 
 # Run the docker image in a container
 
-docker run --name zimmermann_dionatan_coding_assignment14 -p 5075:5075 zimmermann_dionatan_final_site
+docker run --name zimmermann_dionatan_coding_assignment14 -p 5575:5575 zimmermann_dionatan_final_site
 
 ## OPTIONAL - ONLY TO REMOVE CONTAINER
 
