@@ -14,7 +14,7 @@ COPY . .
 RUN npm install \
     && npm install -g serve \
     && npm run build \
-    && rm -fr node_modules
+    && rm -fr node_modules \
     && npm install react-router-dom
 
 # Start the stage 2 with another node base image
