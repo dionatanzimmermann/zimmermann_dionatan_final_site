@@ -41,6 +41,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <StyledNav>
           <Button text="About" onClick={() => (window.location.href = '/')} backgroundColor="#333" />
           <Button text="Skills" onClick={() => (window.location.href = '/skills')} backgroundColor="#333" />
+          <Button text="Resources" onClick={() => (window.location.href = '/resources')} backgroundColor="#333" />
           <Button text="Contact" onClick={() => (window.location.href = '/contact')} backgroundColor="#333" />
         </StyledNav>
       </StyledHeader>
